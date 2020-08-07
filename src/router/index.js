@@ -42,14 +42,27 @@ const routes = [
     ]
   },
   {
-    path: '/icons',
-    name: 'Icons',
-    component: Icons
-  },
-  {
-    path: '/texts',
-    name: 'Texts',
-    component: Texts
+    path: '/v1',
+    name: 'v1',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "v1" */ '../views/designs/'),
+    children: [
+      {
+        path: ''
+      },
+      {
+        path: 'icons',
+        name: 'Icons',
+        component: Icons
+      },
+      {
+        path: 'texts',
+        name: 'Texts',
+        component: Texts
+      }
+    ]
   }
 ]
 
