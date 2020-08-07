@@ -32,14 +32,26 @@ export default {
 
 <style scoped>
 .header {
+  z-index: 90;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: white;
   border-bottom: 1px solid rgb(var(--b6a));
 }
 
 .header-inner {
-  height: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  height: var(--header-height);
+  display: flex;
   align-items: center;
+  justify-content: center;
+
+  @media (--t) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
 }
 
 .home {
@@ -48,12 +60,27 @@ export default {
 }
 
 .navigation {
+  z-index: 90;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid rgb(var(--b6a));
+  height: 60px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: space-around;
 
-  a {
-    margin-left: 20px;
+  @media (--t) {
+    border: 0;
+    height: auto;
+    position: static;
+    justify-content: flex-end;
+
+    a {
+      margin-left: 20px;
+    }
   }
 }
 </style>
