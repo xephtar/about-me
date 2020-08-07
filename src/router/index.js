@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/home/index.vue'
-import Icons from '../views/designs/Icons.vue'
-import Texts from '../views/designs/Texts.vue'
 
 Vue.use(VueRouter)
 
@@ -15,9 +13,6 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/about/'),
     children: [
       {
@@ -36,7 +31,7 @@ const routes = [
         name: 'Education',
         component: () =>
           import(
-            /* webpackChunkName: "projects" */ '../views/about/education.vue'
+            /* webpackChunkName: "education" */ '../views/about/education.vue'
           )
       }
     ]
@@ -44,9 +39,6 @@ const routes = [
   {
     path: '/v1',
     name: 'v1',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "v1" */ '../views/designs/'),
     children: [
       {
@@ -55,12 +47,14 @@ const routes = [
       {
         path: 'icons',
         name: 'Icons',
-        component: Icons
+        component: () =>
+          import(/* webpackChunkName: "icons" */ '../views/designs/Icons.vue')
       },
       {
         path: 'texts',
         name: 'Texts',
-        component: Texts
+        component: () =>
+          import(/* webpackChunkName: "texts" */ '../views/designs/Texts.vue')
       }
     ]
   }
