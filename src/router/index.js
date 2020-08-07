@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
+import Icons from '../views/Icons.vue'
+import Texts from '../views/Texts.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +26,16 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/icons',
+    name: 'Icons',
+    component: Icons
+  },
+  {
+    path: '/texts',
+    name: 'Texts',
+    component: Texts
   }
 ]
 
