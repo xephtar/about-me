@@ -22,6 +22,7 @@ body {
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     background-color: var(--c-primary);
     color: var(--c-text-color);
+    padding-top: var(--header-height);
 }
 
 a {
