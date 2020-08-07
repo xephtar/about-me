@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import IconHome from '../icons/home.svg'
-import IconSettings from '../icons/settings.svg'
+import IconHome from '../../icons/home.svg'
+import IconSettings from '../../icons/settings.svg'
 
 export default {
   name: 'Icons',
