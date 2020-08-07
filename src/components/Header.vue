@@ -1,10 +1,9 @@
 <template>
   <header class="header">
     <Container class="header-inner">
-      <router-link to="/">Home</router-link>
-      <form>
-        <input type="text" placeholder="Search" />
-      </form>
+      <router-link to="/" class="home">Home</router-link>
+
+      <div></div>
 
       <nav>
         <router-link to="/">
@@ -30,7 +29,7 @@ export default {
 
 <style scoped>
 .header {
-  background-color: yellow;
+  border-bottom: 1px solid rgb(var(--b6a));
 }
 
 .header-inner {
@@ -38,5 +37,10 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 10px;
+}
+
+.home {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 </style>
