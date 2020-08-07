@@ -16,7 +16,8 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/about/'),
     children: [
       {
-        path: ''
+        path: '',
+        name: 'About'
       },
       {
         path: 'projects',
@@ -42,7 +43,8 @@ const routes = [
     component: () => import(/* webpackChunkName: "v1" */ '../views/designs/'),
     children: [
       {
-        path: ''
+        path: '',
+        name: 'v1'
       },
       {
         path: 'icons',
