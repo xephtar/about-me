@@ -1,19 +1,17 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <IconHome /><router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div class="app">
+    <MasterHeader />
     <router-view />
   </div>
 </template>
 
 <script>
-import IconHome from './icons/home.svg'
-
+import MasterHeader from '@/components/Header'
 export default {
   name: 'App',
-  components: { IconHome }
+  components: {
+    MasterHeader
+  }
 }
 </script>
 
