@@ -1,12 +1,15 @@
 <template>
   <div class="project">
     <h1>Projects</h1>
+    <Repo />
   </div>
 </template>
 
 <script>
+import Repo from '@/views/about/repo'
 export default {
-  name: 'Project'
+  name: 'Project',
+  components: { Repo }
 }
 </script>
 
