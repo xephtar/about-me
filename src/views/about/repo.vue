@@ -15,9 +15,9 @@
       >
         <v-list-item three-line>
           <v-list-item-content>
-            <v-list-item-title class="headline mb-1">{{
-              repo.name
-            }}</v-list-item-title>
+            <v-list-item-title class="headline mb-1">
+              {{ repo.name }}
+            </v-list-item-title>
             <v-list-item-subtitle>{{ repo.description }}</v-list-item-subtitle>
           </v-list-item-content>
 
@@ -72,9 +72,11 @@ export default {
   },
   created() {
     // Simple GET request using axios
+    this.$Progress.start()
     axios
       .get('https://api.github.com/users/xephtar/repos')
       .then(response => (this.repos = response.data))
+    this.$Progress.finish()
   }
 }
 </script>
