@@ -2,9 +2,7 @@
 
 ## Deployed project
 
-```
 [Vue About Me Project](https://mighty-springs-48925.herokuapp.com/)
-```
 
 ## Project setup
 ```
