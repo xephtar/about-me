@@ -1,8 +1,7 @@
 <template>
   <header class="header">
     <Container class="header-inner">
-      <router-link to="/" class="home">App</router-link>
-
+      <router-link to="/" class="home">Davarci</router-link>
       <nav class="navigation">
         <router-link to="/">
           <IconHomeFill v-if="$route.name === 'Home'" />
@@ -12,6 +11,9 @@
           <IconAboutFill v-if="$route.fullPath.includes('about')" />
           <IconAbout v-else />
         </router-link>
+        <a href="https://www.linkedin.com/in/davarci/">
+          <IconLinkedin />
+        </a>
       </nav>
     </Container>
   </header>
@@ -23,10 +25,18 @@ import IconHomeFill from '@/icons/home-fill.svg'
 import Container from '@/components/Container'
 import IconAbout from '@/icons/about.svg'
 import IconAboutFill from '@/icons/about-fill.svg'
+import IconLinkedin from '@/icons/linkedin.svg'
 
 export default {
   name: 'MainHeader',
-  components: { Container, IconHome, IconHomeFill, IconAbout, IconAboutFill }
+  components: {
+    Container,
+    IconHome,
+    IconHomeFill,
+    IconAbout,
+    IconAboutFill,
+    IconLinkedin
+  }
 }
 </script>
 
