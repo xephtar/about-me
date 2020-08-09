@@ -1,5 +1,11 @@
 # vue-random-gen
 
+## Deployed project
+
+'''
+https://mighty-springs-48925.herokuapp.com/
+'''
+
 ## Project setup
 ```
 npm install
