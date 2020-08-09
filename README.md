@@ -3,7 +3,7 @@
 ## Deployed project
 
 ```
-https://mighty-springs-48925.herokuapp.com/
+[Vue About Me Project](https://mighty-springs-48925.herokuapp.com/)
 ```
 
 ## Project setup
