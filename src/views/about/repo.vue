@@ -71,12 +71,9 @@ export default {
     }
   },
   created() {
-    // Simple GET request using axios
-    this.$Progress.start()
     axios
       .get('https://api.github.com/users/xephtar/repos')
       .then(response => (this.repos = response.data))
-    this.$Progress.finish()
   }
 }
 </script>
