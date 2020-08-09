@@ -9,7 +9,7 @@
           <IconHome v-else />
         </router-link>
         <router-link to="/about">
-          <IconAboutFill v-if="$route.name === 'About'" />
+          <IconAboutFill v-if="$route.fullPath.includes('about')" />
           <IconAbout v-else />
         </router-link>
       </nav>
