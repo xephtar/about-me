@@ -1,12 +1,12 @@
 <template>
   <div class="repo">
-    <div class="repoCardView">
+    <div v-if="this.show" class="repoCardView">
       <IconRepos />
       <h1>Repositories</h1>
-      <span class="Counter">{{ repos.length }}</span>
+      <span v-if="repos !== null" class="Counter">{{ repos.length }}</span>
     </div>
 
-    <Container class="repoContainer">
+    <Container v-if="this.show" class="repoContainer">
       <v-card
         v-for="repo in repos"
         :key="repo.name"
@@ -41,6 +41,9 @@
         </v-card-actions>
       </v-card>
     </Container>
+    <Container v- class="spinner">
+      <v-progress-circular indeterminate color="primary"></v-progress-circular>
+    </Container>
   </div>
 </template>
 
@@ -67,13 +70,15 @@ export default {
   },
   data() {
     return {
-      repos: null
+      repos: null,
+      show: false
     }
   },
   created() {
     axios
       .get('https://api.github.com/users/xephtar/repos')
       .then(response => (this.repos = response.data))
+      .then(() => setTimeout(() => (this.show = true), 500))
   }
 }
 </script>
@@ -128,5 +133,14 @@ export default {
   background-color: rgba(209, 213, 218, 0.5);
   border: 1px solid transparent;
   border-radius: 2em;
+}
+
+.v-progress-circular {
+  margin: 1rem;
+}
+
+.spinner {
+  max-width: 0;
+  align-items: center;
 }
 </style>
