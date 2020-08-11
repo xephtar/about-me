@@ -41,7 +41,7 @@
         </v-card-actions>
       </v-card>
     </Container>
-    <Container v- class="spinner">
+    <Container v-else class="spinner">
       <v-progress-circular indeterminate color="primary"></v-progress-circular>
     </Container>
   </div>
