@@ -18,7 +18,9 @@
             <v-list-item-title class="headline mb-1">
               {{ repo.name }}
             </v-list-item-title>
-            <v-list-item-subtitle>{{ repo.description }}</v-list-item-subtitle>
+            <v-list-item-action-text>
+              {{ repo.description }}
+            </v-list-item-action-text>
           </v-list-item-content>
 
           <v-list-item-avatar tile size="80" color="grey">
@@ -78,24 +80,28 @@ export default {
     axios
       .get('https://api.github.com/users/xephtar/repos')
       .then(response => (this.repos = response.data))
-      .then(() => setTimeout(() => (this.show = true), 500))
+      .then(() => setTimeout(() => (this.show = true), 300))
   }
 }
 </script>
 
 <style scoped>
 .repoCardView {
+  max-width: 100%;
   font-weight: 600;
   padding: 8px 16px;
   font-size: 14px;
   line-height: 30px;
-  max-width: 20%;
   white-space: nowrap;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   border-bottom: 2px solid #f9826c;
   align-items: center;
   justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (--t) {
+    max-width: 20%;
+  }
 }
 
 .repoContainer {

@@ -1,17 +1,21 @@
 <template>
   <div class="about">
     <h1>About</h1>
-    <div id="nav">
-      <router-link to="/about/projects">Projects</router-link> |
-      <router-link to="/about/education">Education</router-link>
-    </div>
+    <Container>
+      <div class="subHeader">
+        <router-link to="/about/projects">Projects</router-link>
+        <router-link to="/about/education">Education</router-link>
+      </div>
+    </Container>
     <router-view />
   </div>
 </template>
 
 <script>
+import Container from '@/components/Container'
 export default {
-  name: 'About'
+  name: 'About',
+  components: { Container }
 }
 </script>
 
@@ -22,5 +26,20 @@ h1 {
   @media (--t) {
     color: blue;
   }
+}
+
+a:hover,
+a.router-link-active,
+a.router-link-exact-active {
+  border-bottom: 2px solid #f9826c;
+  cursor: pointer;
+}
+
+.subHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  justify-content: center;
+  text-align: center;
 }
 </style>
