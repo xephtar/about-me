@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
 import Home from '../views/home/index.vue'
 import Project from '@/views/about/project'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
@@ -16,10 +16,6 @@ const routes = [
     name: 'About',
     component: () => import(/* webpackChunkName: "about" */ '../views/about/'),
     children: [
-      {
-        path: '',
-        name: 'About'
-      },
       {
         path: 'projects',
         name: 'Project',
@@ -41,10 +37,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "v1" */ '../views/designs/'),
     children: [
       {
-        path: '',
-        name: 'v1'
-      },
-      {
         path: 'icons',
         name: 'Icons',
         component: () =>
@@ -64,6 +56,14 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.afterEach((to, from) => {
+  console.log(to, from)
+  window.analytics.page(from.name, {user_id: '123456', user_detail: {
+      name: 'Omer Faruk Davarci',
+      email: 'omer.davarci@sabancidx.com'
+    }})
 })
 
 export default router

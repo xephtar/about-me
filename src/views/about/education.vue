@@ -12,12 +12,17 @@ export default {
   name: 'Education',
   data() {
     return {
-      title: 'Track Button!'
+      title: 'One To One Meeting Request'
     }
   },
   methods: {
     trackEvent () {
-      window.analytics.track('User Signup')
+      window.analytics.track('SendOneToOneRequest', 
+        {
+        from: 
+          {name: 'Omer Faruk Davarci', email: 'omer.davarci@sabancidx.com'}, 
+        to:
+          {name:'Ahmet Ozgur Ciragiloglu', email:'ozgur.ciragiloglu@sabancidx.com'}})
     }
   }
 }

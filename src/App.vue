@@ -18,6 +18,12 @@ export default {
   components: {
     Container,
     MasterHeader
+  },
+  mounted() {
+    window.analytics.identify('123456', {
+      name: 'Omer Faruk Davarci',
+      email: 'omer.davarci@sabancidx.com'
+    });
   }
 }
 </script>

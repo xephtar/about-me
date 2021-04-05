@@ -39,7 +39,7 @@
         </v-list-item>
 
         <v-card-actions>
-          <v-btn text :href="repo.html_url">Open</v-btn>
+          <v-btn text :href="repo.html_url" v-on:click="trackEvent(repo)">Open</v-btn>
         </v-card-actions>
       </v-card>
     </Container>
@@ -81,6 +81,11 @@ export default {
       .get('https://api.github.com/users/xephtar/repos')
       .then(response => (this.repos = response.data))
       .then(() => setTimeout(() => (this.show = true), 300))
+  },
+  methods: {
+    trackEvent (repo) {
+      window.analytics.track('Repo Clicked', {repoName: repo.name, repoUrl: repo.html_url})
+    }
   }
 }
 </script>

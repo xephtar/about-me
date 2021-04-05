@@ -6,10 +6,7 @@
 
 <script>
 export default {
-  name: 'Home',
-  mounted () {
-    window.analytics.page('Home')
-  }
+  name: 'Home'
 }
 </script>
 
