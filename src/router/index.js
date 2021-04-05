@@ -60,7 +60,7 @@ const router = new VueRouter({
 
 router.afterEach((to, from) => {
   console.log(to, from)
-  window.analytics.page(from.name, {user_id: '123456', user_detail: {
+  window.analytics.page(to.name, {user_id: '123456', user_detail: {
       name: 'Omer Faruk Davarci',
       email: 'omer.davarci@sabancidx.com'
     }})
